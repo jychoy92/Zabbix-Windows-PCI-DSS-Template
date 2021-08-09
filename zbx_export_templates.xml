@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.4</version>
-    <date>2021-06-06T07:44:00Z</date>
+    <date>2021-08-09T08:25:06Z</date>
     <groups>
         <group>
+            <uuid>57b7ae836ca64446ba2c296389c009b7</uuid>
             <name>Templates/Modules</name>
         </group>
     </groups>
     <templates>
         <template>
+            <uuid>28e4b77702d74ba795b484f9f5968fe9</uuid>
             <template>PCI DSS Windows</template>
             <name>PCI DSS Windows</name>
             <description>Brandon Choy</description>
@@ -17,27 +19,19 @@
                     <name>Templates/Modules</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>Security</name>
-                </application>
-            </applications>
             <items>
                 <item>
+                    <uuid>65fd9580868c405693723241cbfaedaf</uuid>
                     <name>Event ID 4608 : Windows is starting up</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4608,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -45,11 +39,19 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>c9b04da12d094fc18f6a7c982a5fc5fe</uuid>
                     <name>PCI DSS Windows Items</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4608|4609|4610|4611|4612|4614|4616|4624|4625|4634|4657|4660|4663|4670|4674|4720|4722|4723|4725|4726|4727|4728|4729|4730|4731|4732|4733|4734|4738|4740|4767|5143|6144,,skip]</key>
@@ -57,27 +59,25 @@ return accountName + &quot; : &quot; + lineZero;</params>
                     <status>DISABLED</status>
                     <value_type>LOG</value_type>
                     <description>An example, disabled by default, to demonstrate polling many event ids in one item.</description>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>d1d923f9266546688ae79a790eb007a0</uuid>
                     <name>Event ID 4609 : Windows is shutting down</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4609,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -85,25 +85,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>daecf9e7296841eabff3e849761dbd75</uuid>
                     <name>Event ID 4610 : An authentication package has been loaded by the Local Security Authority</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4610,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -111,25 +115,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>2767eb6791f84a1d8b4c224de7884f05</uuid>
                     <name>Event ID 4611 : A trusted logon process has been registered with the Local Security Authority</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4611,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -137,25 +145,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>cc4cf1f44a3249f1a25a8f67ed069f53</uuid>
                     <name>Event ID 4612 : Internal resources allocated for the queuing of audit messages have been exhausted, leading to the loss of some audits</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4612,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -163,25 +175,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>5ffbf6791f5b4969bcee365ee7e9f03e</uuid>
                     <name>Event ID 4614 : A notification package has been loaded by the Security Account Manager</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4614,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -189,25 +205,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>be8f36c6b2fc40b69d225ef20a9ae78e</uuid>
                     <name>Event ID 4616 : The system time was changed</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4616,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -215,25 +235,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>4e6a1a089b3149729c1da43d43827ee5</uuid>
                     <name>Event ID 4624 : Successful Logon</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4624,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -241,25 +265,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>57cba6c916bd4c3b8126b5d31359565c</uuid>
                     <name>Event ID 4625 : Failed Logon</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4625,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -267,25 +295,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>f7cd7d185fa14f20b34ce66d6b4ca6d3</uuid>
                     <name>Event ID 4634 : An account was logged off</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4634,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -293,25 +325,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>e5acfc250c61452fbfee96aeb677aa47</uuid>
                     <name>Event ID 4657 : A registry value was modified</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4657,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -319,25 +355,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>b855123318604af987413db678403dc6</uuid>
                     <name>Event ID 4660 : An object was deleted</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4660,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -345,25 +385,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>8c796e3905b04c0dbb6d55676280b2f4</uuid>
                     <name>Event ID 4663 : An attempt was made to access an object</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4663,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -371,25 +415,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>28e4a90ad2db4e458159190eb3960bbb</uuid>
                     <name>Event ID 4670 : Permissions on an object were changed</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4670,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -397,25 +445,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>6f660c4c01c6497da5bef283df255ee4</uuid>
                     <name>Event ID 4674 : An operation was attempted on a privileged object</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4674,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -423,25 +475,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>d1f409fb988b4f59b248efa8803e2af6</uuid>
                     <name>Event ID 4720 : A user account was created</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4720,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -449,25 +505,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>9906bd7a36be43829a2eaa3f8a3fd774</uuid>
                     <name>Event ID 4722 : A user account was enabled</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4722,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -475,25 +535,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>4c0e413641df4ad293ee48a35d510433</uuid>
                     <name>Event ID 4723 : An attempt was made to change an account's password</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4723,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -501,25 +565,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>a50e8f1e590e44d4a6387dd724dcb7d8</uuid>
                     <name>Event ID 4725 : A user account was disabled</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4725,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -527,25 +595,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>37ecfce11b504228a48ec8d089ea62fe</uuid>
                     <name>Event ID 4726 : A user account was deleted</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4726,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -553,25 +625,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>babce5a5146c4f6aa1b3a73905d7e6e4</uuid>
                     <name>Event ID 4727 : A security-enabled global group was created</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4727,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -579,25 +655,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>68d4aea495e94c2f90aa24c8cc5244e9</uuid>
                     <name>Event ID 4728 : A member was added to a security-enabled global group</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4728,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -605,25 +685,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>583d36946ef649a28129d032f215a405</uuid>
                     <name>Event ID 4729 : A member was removed from a security-enabled global group</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4729,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -631,25 +715,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>5c1c6196c3ef4f5093c493c53fe7a146</uuid>
                     <name>Event ID 4730 : A security-enabled global group was deleted</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4730,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -657,25 +745,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>645db139de1d491591b2fea1e18fde76</uuid>
                     <name>Event ID 4731 : A security-enabled local group was created</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4731,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -683,25 +775,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>1ae50d6d430a4f65a486733959bdd451</uuid>
                     <name>Event ID 4732 : A member was added to a security-enabled local group</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4732,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -709,25 +805,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>89d3e60e4bae42eeb119dd461069e896</uuid>
                     <name>Event ID 4733 : A member was removed from a security-enabled local group</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4733,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -735,25 +835,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>01b82d4763ed425ebb41ddf8d30de4b8</uuid>
                     <name>Event ID 4734 : A security-enabled local group was deleted</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4734,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -761,25 +865,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>e06a823367544858a33938690d0af846</uuid>
                     <name>Event ID 4738 : A user account was changed</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4738,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -787,25 +895,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>12ac9e8fa90f47f0a0d3d741e0fa8482</uuid>
                     <name>Event ID 4740 : A user account was locked out</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4740,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -813,25 +925,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>2a5027bdc3dd4351beb8298e3ed7029e</uuid>
                     <name>Event ID 4767 : A user account was unlocked</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,4767,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -839,25 +955,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>995baad4d6084193a7e9f656332c03f0</uuid>
                     <name>Event ID 5143 : A network share object was modified</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,5143,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -865,25 +985,29 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>5c1c33bceb7a4ba088ac110f95362073</uuid>
                     <name>Event ID 6144 : Security policy in the group policy objects has been applied successfully</name>
                     <type>ZABBIX_ACTIVE</type>
                     <key>eventlog[Security,,,,6144,,skip]</key>
                     <trends>0</trends>
                     <value_type>LOG</value_type>
-                    <applications>
-                        <application>
-                            <name>Security</name>
-                        </application>
-                    </applications>
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var lines = value.split(&quot;\n&quot;);
+                            <parameters>
+                                <parameter>var lines = value.split(&quot;\n&quot;);
 var lineZero = lines[0];
 var accountName = &quot;&quot;;
 lines.forEach(function(line) {
@@ -891,9 +1015,16 @@ lines.forEach(function(line) {
     accountName = line.substring(14).trim();
   }
 });
-return accountName + &quot; : &quot; + lineZero;</params>
+return accountName + &quot; : &quot; + lineZero;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Security</value>
+                        </tag>
+                    </tags>
                 </item>
             </items>
         </template>
